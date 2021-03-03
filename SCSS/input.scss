@@ -364,7 +364,22 @@ body {
     background-color: #262834;
     padding: 15px;
   }
-
+@media (min-width:1000px){ 
+  .mobileSideMenu{
+    display: none;
+  }
+}
+@media (min-width: 460px){
+.mm-wrapper_opening .mm-menu_position-right.mm-menu_opened~.mm-slideout {
+    -webkit-transform: translate3d(-300px,0,0);
+    transform: translate3d(-300px,0,0);
+}
+}
+.mm-menu_offcanvas {
+  width: 70%;
+  min-width: 300px;
+  max-width: 300px;
+}
                                /* NAVBAR */
 header img {
   display: flex;
@@ -483,12 +498,16 @@ form.search-bar input[type=text] {
   padding: 15px;
   font-size: 15px;
   margin: 0px;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   border-radius: 0px;
   width: 230px;
   height: 56px;
   background: white;
+  input.miniSearch:focus{
+    border: solid 1px blue;
+  }
 }
+
 
 form.search-bar button {
   width: 60px;
@@ -565,6 +584,8 @@ header li .mburger:focus {
 }
 header li .mburger:hover {
   background-color: #22242e;
+  text-decoration: none;
+
 }
                                 /* SUBMENU */
 .submenu {
@@ -582,6 +603,9 @@ header li .mburger:hover {
   padding-left: 0px;
   padding-right: 0px;
   border: none;
+  a {
+    text-decoration: none;
+  }
   .nav-tab-wd {
     width: 192px;
     height: 99px;
@@ -770,7 +794,7 @@ header li .mburger:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  opacity:0;
+  visibility: hidden;
   width: 2000px;
   color: white;
   background-color: #333645;
@@ -833,7 +857,7 @@ header li .mburger:hover {
   background-color: #de093f;
 }
 .nav-tabs:hover .tooltiptexttop {
-  opacity: 1;
+  visibility: visible;
 }
 @media all and (min-width: 1000px) and (max-width: 1200px) {
   .nav-tabs {
@@ -1123,6 +1147,7 @@ h3 {
   justify-content: center;
   text-align: center;
   border-radius: 10%;
+  margin: 0px auto 0px auto;
 }
 .card-content {
   padding-bottom: 0px;
@@ -1148,11 +1173,10 @@ hr {
   color: black;
 }
                            /* Card 1-BESPOKE SOFTWARE */
-
 .cards .card-1 {
   order: 1;
   border: 0.1px solid #c2c2c2;
-  width: 30%;
+  width: 370px;
   height: 310px;
   margin: 15px;
   padding-top: 20px;
@@ -1222,7 +1246,7 @@ hr {
 .cards .card-2 {
   order: 2;
   border: 0.1px solid #c2c2c2;
-  width: 30%;
+  width: 370px;
   height: 310px;
   margin: 15px;
   padding: 20px;
@@ -1280,7 +1304,7 @@ hr {
 .cards .card-3 {
   order: 3;
   border: 0.1px solid #c2c2c2;
-  width: 30%;
+  width: 370px;
   height: 310px;
   margin: 15px;
   padding: 20px;
@@ -1337,7 +1361,7 @@ hr {
 .cards .card-4 {
   order: 4;
   border: 0.1px solid #c2c2c2;
-  width: 22%;
+  width: 270px;
   height: 300px;
   margin: 15px;
   padding: 20px;
@@ -1394,7 +1418,7 @@ hr {
 .cards .card-5 {
   order: 5;
   border: 0.1px solid #c2c2c2;
-  width: 22%;
+  width: 270px;
   height: 300px;
   margin: 15px;
   padding: 20px;
@@ -1451,7 +1475,7 @@ hr {
 .cards .card-6 {
   order: 6;
   border: 0.1px solid #c2c2c2;
-  width: 22%;
+  width: 270px;
   height: 300px;
   margin: 15px;
   padding: 20px;
@@ -1509,7 +1533,7 @@ hr {
 .cards .card-7 {
   order: 7;
   border: 0.1px solid #c2c2c2;
-  width: 22%;
+  width: 270px;
   height: 300px;
   margin: 15px;
   padding: 20px;
@@ -1563,20 +1587,20 @@ hr {
   border-radius: 4%;
 }
 ///////////////////////////////* MEDIA QUERIES */////////////////////////////////////
-@media all and (min-width: 1680px){
+
+@media all and (min-width: 1260px) {
   .cards {
-    padding-left: 10%;
-    padding-right: 10%;
+    width: 1200px;
     .cards .card-1 {
-      width: 370px;
+      width: 400px;
       height: 312px;
     }
     .cards .card-2 {
-      width: 370px;
+      width: 400px;
       height: 312px;
     }
     .cards .card-3 {
-      width: 370px;
+      width: 400px;
       height: 312px;
     }
     .cards .card-4 {
@@ -1597,41 +1621,7 @@ hr {
     }
   }
 }
-@media all and (min-width: 1350px) and (max-width: 1680px) {
-  .cards {
-    padding-left: 10%;
-    padding-right: 10%;
-    .cards .card-1 {
-      width: 370px;
-      height: 312px;
-    }
-    .cards .card-2 {
-      width: 370px;
-      height: 312px;
-    }
-    .cards .card-3 {
-      width: 370px;
-      height: 312px;
-    }
-    .cards .card-4 {
-      width: 270px;
-      height: 312px;
-    }
-    .cards .card-5 {
-      width: 270px;
-      height: 312px;
-    }
-    .cards .card-6 {
-      width: 270px;
-      height: 312px;
-    }
-    .cards .card-7 {
-      width: 270px;
-      height: 312px;
-    }
-  }
-}
-@media all and (min-width: 1000px) and (max-width: 1350px) {
+@media all and (min-width: 991px) and (max-width: 1260px) {
   .cards .card-1 {
     width: 293px;
     height: 356px;
@@ -1661,67 +1651,66 @@ hr {
     height: 290px;
   }
 }
-@media all and (min-width: 800px) and (max-width: 1000px) {
+@media all and (min-width:800px) and (max-width: 991px) {
   .cards .card-1 {
-    width: 720px;
+    width: 80%;
     height: 290px;
   }
   .cards .card-2 {
-    width: 720px;
+    width: 80%;
     height: 290px;
   }
   .cards .card-3 {
-    width: 720px;
+    width: 80%;
     height: 290px;
   }
   .cards .card-4 {
-    width: 720px;
+    width: 80%;
     height: 290px;
   }
   .cards .card-5 {
-    width: 720px;
+    width: 80%;
     height: 290px;
   }
   .cards .card-6 {
-    width: 720px;
+    width: 80%;
     height: 290px;
   }
   .cards .card-7 {
-    width: 720px;
+    width: 80%;
     height: 290px;
   }
 }
 @media all and (max-width: 800px) {
   .cards .card-1 {
-    width: 90%;
+    width: 95%;
     height: 290px;
   }
   .cards .card-2 {
-    width: 90%;
+    width: 95%;
     height: 290px;
   }
   .cards .card-3 {
-    width: 90%;
+    width: 95%;
     height: 290px;
   }
   .cards .card-4 {
-    width: 90%;
+    width: 95%;
     height: 290px;
   }
   .cards .card-5 {
-    width: 90%;
+    width: 95%;
     height: 290px;
   }
   .cards .card-6 {
-    width: 90%;
+    width: 95%;
     height: 290px;
   }
   .cards .card-7 {
-    width: 90%;
+    width: 95%;
     height: 290px;
   }
 }
-
 
 ///////////////////////////////* MEDIA QUERIES */////////////////////////////////////
 @media all and (min-width: 1680px){
@@ -1862,7 +1851,8 @@ hr {
 
 .our-culture-box {
   background-image: url('../img/nm-background.png');
-  background-repeat: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
   padding-left: 12%;
   padding-right: 12%;
   font-size: 1em;
@@ -1956,11 +1946,12 @@ hr {
     width: 370px;
     border-radius: 3px;
     margin: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 25px 0 rgba(0, 0, 0, 0.02);
     overflow: hidden;
     .newsimage {
+      width:auto;
       overflow: hidden;
     }
+    
     .news-img-1 {
       width: 368px;
       border-bottom: 1px solid #c2c2c2;
@@ -1968,6 +1959,7 @@ hr {
     }
     .news-img-1:hover {
       transform: scale(1.1);
+      opacity: 0.6;
     }
     h3 {
       text-align: left;
@@ -2071,6 +2063,7 @@ hr {
   }
   .news-img-2:hover {
     transform: scale(1.1);
+    opacity: 0.6;
   }
   .labeltooltip {
     .news-label-2 {
@@ -2147,6 +2140,7 @@ hr {
   }
   .news-img-3:hover {
     transform: scale(1.1);
+    opacity: 0.6;
   }
   .labeltooltip {
     .news-label-3 {
@@ -2212,7 +2206,7 @@ hr {
   display: block;
 }
 .tooltiptextnews {
-  opacity: 0;
+  visibility: hidden;
   width: 190px;
   height: 50px;
   color: white;
@@ -2245,7 +2239,7 @@ hr {
   bottom: 50px;
 }
 .labeltooltip:hover .tooltiptextnews {
-  opacity: 1;
+  visibility: visible;
 }
 .tooltiptextn1::after {
    content: " ";
@@ -2417,7 +2411,7 @@ hr {
   display: block;
 }
 .tooltiptext {
-  opacity:0;
+  visibility: hidden;
   width: 250px;
   color: white;
   background-color: #333645;
@@ -2457,9 +2451,12 @@ hr {
   bottom: 120px;
 }
 
-.sponsor:hover .tooltiptext {
-  opacity: 1;
+.sponsor:hover {
+  .tooltiptext {
+    visibility: visible;
+  }
 }
+
 .tooltiptext1::after {
    content: " ";
   position: absolute;
@@ -2527,9 +2524,25 @@ footer {
     }
     .foot-contact-us {
       margin: 30px;
+      p a {
+        color:white;
+      }
     }
     .foot-about {
       margin: 30px;
+      a {
+        color: white;
+      }
+      ul {
+        padding-left: 0px;
+      }
+      ul li {
+        list-style: none;
+        font-size: .8em;
+        text-align: left;
+        color: white;
+        line-height: 1.3em;
+      }
       p:hover {
         text-decoration: underline;
       }
@@ -2554,6 +2567,9 @@ footer {
         width: 45%;
         margin: 5px;
         background-color: #262834;
+        a {
+          color: white;
+        }
       }
       .facebook-btn-box:hover {
         background-color: #3b5998;
@@ -2565,6 +2581,9 @@ footer {
         width: 45%;
         margin: 5px;
         background-color: #262834;
+        a {
+          color: white;
+        }
       }
       .twitter-btn-box:hover {
         background-color: #00aced;
@@ -2576,6 +2595,9 @@ footer {
         width: 45%;
         margin: 5px;
         background-color: #262834;
+        a {
+          color: white;
+        }
       }
       .linkedin-btn-box:hover {
         background-color: #0077b5;
