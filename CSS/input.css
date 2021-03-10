@@ -12,36 +12,28 @@ body {
   overflow-x: hidden;
 }
 
-#myCookieConsent {
-  border-radius: 5px;
-  background-color: white;
-  min-height: 490.15px;
-  max-height: 747.15px;
-  width: 75%;
-  max-width: 621px;
-  min-width: 392px;
-  font-size: 14px;
-  color: black;
-  line-height: 26px;
-  padding: 8px 20px 8px 20px;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  display: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  z-index: 9999;
+/*#myCookieConsent {
+    border-radius: 5px;
+    background-color: white;
+    min-height: 490.15px;
+    max-height: 747.15px;
+    width: 75%;
+    max-width: 621px;
+    min-width: 392px;
+    font-size: 14px;
+    color: black;
+    line-height: 26px;
+    padding: 8px 20px 8px 20px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 9999;
 }
-
 #myCookieConsent h3 {
   font-size: 1.9em;
   color: #333645;
@@ -57,62 +49,149 @@ body {
 }
 
 #myCookieConsent a {
-  color: #4B8EE7;
-  text-decoration: none;
+    color: #4B8EE7;
+    text-decoration: none;
 }
-
 #myCookieConsent .cookieBTNS {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
   border-top: 1px solid #d6d6d6;
   padding-top: 20px;
   padding-bottom: 10px;
 }
 
 #myCookieConsent a.cookieConsentCHANGE {
+    background-color: #999aa2;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    width: 47%;
+    font-size: 1.20em;
+}
+#myCookieConsent a.cookieConsentCHANGE:hover {
+    background-color: #666666;
+}
+#myCookieConsent a.cookieButton {
+    background-color: #926fb1;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    width: 47%;
+    font-size: 1.20em;
+}
+#myCookieConsent a.cookieButton:hover {
+    background-color: #79539a;
+}*/
+.popup {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin: auto;
+  display: block;
+  z-index: 1000;
+}
+
+.popup-inner {
+  width: 600px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  border-radius: 1%;
+}
+
+.popup-inner h3 {
+  font-size: 1.8em;
+  color: #333645;
+  text-align: left;
+  border-bottom: 1px solid #d6d6d6;
+  padding: 15px;
+}
+
+.popup-inner p {
+  font-size: 1.1em;
+  color: #666666;
+  line-height: 1.8em;
+  padding: 10px;
+  text-align: left;
+}
+
+.popup-inner hr {
+  width: 100%;
+  height: 1px;
+  background-color: #d6d6d6;
+  border: none;
+}
+
+.popup-inner .cookieConsentCHANGE {
   background-color: #999aa2;
   color: white;
   text-align: center;
   border-radius: 3px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   cursor: pointer;
-  width: 47%;
-  font-size: 1.20em;
+  width: 43%;
+  height: 46px;
+  font-size: 1.1em;
+  border: none;
+  margin: 15px;
 }
 
-#myCookieConsent a.cookieConsentCHANGE:hover {
+.popup-inner .cookieConsentCHANGE:hover {
   background-color: #666666;
 }
 
-#myCookieConsent a.cookieButton {
+.popup-inner .cookieButton {
   background-color: #926fb1;
+  border: none;
   color: white;
   text-align: center;
   border-radius: 3px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   cursor: pointer;
-  width: 47%;
-  font-size: 1.20em;
+  width: 43%;
+  height: 46px;
+  font-size: 1.1em;
+  margin: 15px;
 }
 
-#myCookieConsent a.cookieButton:hover {
+.popup-inner .cookieButton:hover {
   background-color: #79539a;
+}
+
+@media (max-width: 650px) {
+  .popup-inner {
+    width: 90%;
+  }
+  .popup-inner .cookieButton {
+    width: 90%;
+  }
+  .popup-inner .cookieConsentCHANGE {
+    width: 90%;
+  }
 }
 
 /*Main Menu CSS*/
 .mm-menu {
   --mm-color-background: #333645;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .mm-navbar__title {
@@ -573,7 +652,7 @@ header li .search-bar {
   margin: 0px;
 }
 
-form.search-bar input[type=text] {
+.miniSearch {
   color: #999aa2;
   padding: 15px;
   font-size: 15px;
@@ -585,8 +664,10 @@ form.search-bar input[type=text] {
   background: white;
 }
 
-form.search-bar input[type=text] input.miniSearch:focus {
-  border: solid 1px blue;
+.miniSearch:focus {
+  outline-color: #9ac7d4;
+  -webkit-box-shadow: #9ac7d4;
+          box-shadow: #9ac7d4;
 }
 
 form.search-bar button {
@@ -662,21 +743,27 @@ header li .mburger .mburgerText {
   font-size: .95em;
 }
 
-header li .mburger:focus b {
-  top: 18.5px;
-}
-
-header li .mburger:focus .bB {
-  top: 18.5px;
-}
-
-header li .mburger:focus .bC {
-  top: 18.5px;
-}
-
-header li .mburger:focus .mburgerText {
+header li .mburger:active .mburgerText {
   margin-top: 38px;
   font-size: .95em;
+}
+
+.mm-wrapper_opened .mburger--spin b:nth-of-type(1) {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  -webkit-transition-delay: calc(var(--mb-animate-timeout) + 0s), calc(var(--mb-animate-timeout) + .2s);
+          transition-delay: calc(var(--mb-animate-timeout) + 0s), calc(var(--mb-animate-timeout) + .2s);
+  top: 20px;
+  bottom: 4px;
+}
+
+.mm-wrapper_opened .mburger--spin b:nth-of-type(3) {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  -webkit-transition-delay: calc(var(--mb-animate-timeout) + 0s), calc(var(--mb-animate-timeout) + .2s);
+          transition-delay: calc(var(--mb-animate-timeout) + 0s), calc(var(--mb-animate-timeout) + .2s);
+  top: 20px;
+  bottom: 4px;
 }
 
 header li .mburger:hover {

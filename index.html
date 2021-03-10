@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
         <title>Netmatters.co.uk/Reflection</title>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -9,22 +9,22 @@
         <link href="../node_modules/mburger-css/dist/mburger.css" rel="stylesheet" />
         <link rel="stylesheet" href="CSS/input.css">
         <script src="https://kit.fontawesome.com/4900ec6f7f.js" crossorigin="anonymous"></script>
-        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         
     </head>
     <body>
       <div id="my-page">
-        <div id="myCookieConsent">
-          <h3>Cookies Policy</h3>
-          <p>We use cookies to obtain aggregate data regarding site traffic and interaction, in order to identify user trends and obtain insights in order to continually improve our site. These cookies enable us to improve your customer experience as you use our site and help provide you with relevant online marketing.</p>
-          <p>You can see a list of the other companies who use cookies on this website, by visiting cookie settings at the bottom of each page. For full details of how we use your personal information, and your rights in relation to it, view our privacy policy.</p>
-          <div class="cookieBTNS">      
-            <a class="cookieConsentCHANGE">CHANGE SETTINGS</a>
-            <a class="cookieButton">ACCEPT COOKIES</a>
-          </div>
+        
+        <div class="popup" style="display:none;">
+          <div class="popup-inner">
+            <h3>Cookies Policy</h3>
+            <p>We use cookies to obtain aggregate data regarding site traffic and interaction, in order to identify user trends and obtain insights in order to continually improve our site. These cookies enable us to improve your customer experience as you use our site and help provide you with relevant online marketing.</p>
+            <p>You can see a list of the other companies who use cookies on this website, by visiting cookie settings at the bottom of each page. For full details of how we use your personal information, and your rights in relation to it, view our privacy policy.</p>
+            <hr>
+            <button class="cookieConsentCHANGE">CHANGE SETTINGS</button>  
+            <button class="cookieButton">ACCEPT COOKIES</button> 
+          </div>  
         </div>
-                   <!-- NAVBAR -->
+                   <!-- SIDE MENU -->
         <div id="my-header">
           <nav id="my-menu">
               <button class="contactSidebtn mobileSideMenu">CONTACT US</button>
@@ -112,7 +112,7 @@
               <a class="item" href="/">&raquo;&nbsp;&nbsp;INSIGHTS</a>
               <a class="divider" href="/">COVID RISK ASSESMENTS</a>
           </nav>
-        <header>
+        <header>  <!-- NAVBAR -->
             <nav>
                 <ul>
                     <a href="#"><img src="../img/navbar-logo.png" alt="Netmatters Logo"></a>
@@ -602,6 +602,9 @@
      </div>
     </div>
       <!-- Jquery js -->
+      <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+      <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js"></script>
       <script src="../node_modules/mmenu-js/dist/mmenu.js"></script>
       <script type="text/javascript" src="../JS/jquery.simpleslider.js"></script>
       <script type="text/javascript" src="../JS/transit.js"></script>

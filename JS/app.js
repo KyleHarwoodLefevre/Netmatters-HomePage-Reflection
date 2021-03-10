@@ -4,8 +4,7 @@ $(document).ready(function(){
 });
 
 /* Mobile Menu Plugin - Mmenu */
-document.addEventListener(
-        "DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function() {
             new Mmenu( "#my-menu", {
                "extensions": [
                   "pagedim-black",
@@ -15,48 +14,35 @@ document.addEventListener(
             });
         }
     );
-$(document).ready(function(){   
-    setTimeout(function () {
-        $("#myCookieConsent").fadeIn(200);
-     }, 4000);
-    $("#closeCookieConsent, .cookieButton").click(function() {
-        $("#myCookieConsent").fadeOut(200);
-    }); 
-}); 
  
 // Cookie Compliancy BEGIN
-function GetCookie(name) {
-  var arg=name+"=";
-  var alen=arg.length;
-  var clen=document.cookie.length;
-  var i=0;
-  while (i<clen) {
-	var j=i+alen;
-	if (document.cookie.substring(i,j)==arg)
-	  return "here";
-	i=document.cookie.indexOf(" ",i)+1;
-	if (i==0) break;
+if  ($.cookie('popup') == 'popped') //if the cookie exists with the value 'popped', no popup
+  {
+    console.log( 'The cookie is still valid, no popup today!' );
   }
-  return null;
-}
-function testFirstCookie(){
-	var offset = new Date().getTimezoneOffset();
-	if ((offset >= -180) && (offset <= 0)) { // European time zones
-		var visit=GetCookie("cookieCompliancyAccepted");
-		if (visit==null){
-		   $("#myCookieConsent").fadeIn(400);	// Show warning
-	   } else {
-			// Already accepted
-	   }		
-	}
-}
-$(document).ready(function(){
-    $("#cookieButton").click(function(){
-		console.log('Understood');
-		var expire=new Date();
-		expire=new Date(expire.getTime()+7776000000);
-		document.cookie="cookieCompliancyAccepted=here; expires="+expire+";path=/";
-        $("#myCookieConsent").hide(400);
+else //if there's no cookie, fire the popup, then give them a cookie
+  {
+    $( ".popup" ).toggle(); //show the popup by toggling away its display-none status
+
+    $( ".popup button .cookieButton" ).click(function() { //toggle the popup when close button is hit
+    $( ".popup" ).toggle();
     });
-	testFirstCookie();
-});
+      
+    $.cookie('popup', 'popped', { expires: 1, path: '/' }); //this is the cookie, named popup with the value popped, expires after 1 day and is relevant to the whole site. see 'jquery-cookie' documentation for more details: https://github.com/carhartl/jquery-cookie
+    
+    console.log( 'The cookie is null, you get a popup' );
+
+  }
+
+  // Polyfill library
+const polyfillLibrary = require('polyfill-library');
+
+const polyfillBundle = polyfillLibrary.getPolyfillString({
+	uaString: 'Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 6.0; en-US)',
+	minify: true,
+	features: {
+		'es6': { flags: ['gated'] }
+	}
+}).then(function(bundleString) {
+	console.log(bundleString);
+});  

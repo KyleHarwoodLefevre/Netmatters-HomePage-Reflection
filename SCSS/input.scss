@@ -14,7 +14,7 @@ body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
 }
-#myCookieConsent {
+/*#myCookieConsent {
     border-radius: 5px;
     background-color: white;
     min-height: 490.15px;
@@ -90,12 +90,100 @@ body {
 }
 #myCookieConsent a.cookieButton:hover {
     background-color: #79539a;
+}*/
+.popup {
+  position:absolute; 
+  width:100%; 
+  height:100%; 
+  background:rgba(0,0,0,0.5); 
+  text-align:center; 
+  margin:auto; 
+  display:block;
+  z-index: 1000;
+}
+
+.popup-inner {
+  width:600px; 
+  height:fit-content;
+  background:#fff; 
+  position:fixed; 
+  top:0; 
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto; 
+  display:block;
+  border-radius: 1%;
+  h3 {
+    font-size: 1.8em;
+    color: #333645;
+    text-align: left;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 15px;
+  }
+  p {
+    font-size: 1.1em;
+    color: #666666;
+    line-height: 1.8em;
+    padding: 10px;
+    text-align: left;
+  }
+  hr {
+    width: 100%;
+    height: 1px;
+    background-color:#d6d6d6;
+    border: none;
+  }
+  .cookieConsentCHANGE {
+    background-color: #999aa2;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    width: 43%;
+    height: 46px;
+    font-size: 1.1em;
+    border: none;
+    margin: 15px;
+  }
+  .cookieConsentCHANGE:hover {
+    background-color: #666666;
+  }
+  .cookieButton {
+    background-color: #926fb1;
+    border: none;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    width: 43%;
+    height: 46px;
+    font-size: 1.1em;
+    margin: 15px;
+  }
+  .cookieButton:hover {
+    background-color: #79539a;
+  }
+}
+@media (max-width: 650px){
+  .popup-inner {
+    width:90%;
+    .cookieButton {
+      width: 90%;
+    }
+    .cookieConsentCHANGE {
+      width: 90%;
+    }
+  }
 }
 
 /*Main Menu CSS*/
 .mm-menu {
   --mm-color-background: #333645;
   overflow: scroll;
+  overflow-x: hidden;
   }
   .mm-navbar__title {
     display: none;
@@ -493,7 +581,7 @@ header li .search-bar {
   margin: 0px;
 }
 
-form.search-bar input[type=text] {
+.miniSearch{
   color: #999aa2;
   padding: 15px;
   font-size: 15px;
@@ -503,11 +591,11 @@ form.search-bar input[type=text] {
   width: 230px;
   height: 56px;
   background: white;
-  input.miniSearch:focus{
-    border: solid 1px blue;
-  }
 }
-
+.miniSearch:focus {
+  outline-color: #9ac7d4;
+  box-shadow: #9ac7d4;
+}
 
 form.search-bar button {
   width: 60px;
@@ -567,20 +655,27 @@ header li .mburger {
     font-size: .95em;
   }
 }
-header li .mburger:focus {
-  b {
-    top: 18.5px;
-  }
-  .bB{
-    top: 18.5px;
-  }
-  .bC{
-    top: 18.5px;
-  }
+header li .mburger:active {
   .mburgerText{
     margin-top: 38px;
     font-size: .95em;
   }
+}
+.mm-wrapper_opened .mburger--spin b:nth-of-type(1) {
+  transform: rotate(
+135deg
+);
+  transition-delay: calc(var(--mb-animate-timeout) + 0s),calc(var(--mb-animate-timeout) + .2s);
+  top: 20px;
+  bottom: 4px; 
+}
+.mm-wrapper_opened .mburger--spin b:nth-of-type(3) {
+  transform: rotate(
+225deg
+);
+  transition-delay: calc(var(--mb-animate-timeout) + 0s),calc(var(--mb-animate-timeout) + .2s);
+  top: 20px;
+  bottom: 4px;
 }
 header li .mburger:hover {
   background-color: #22242e;
